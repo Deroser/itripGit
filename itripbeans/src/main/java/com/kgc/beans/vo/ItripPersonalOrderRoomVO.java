@@ -18,8 +18,8 @@ public class ItripPersonalOrderRoomVO {
     private Long roomId;                //房型ID
     private String roomTitle;           //房型名称
     private Long roomBedTypeId;         //床型
-    private Date checkInDate;           //入住时间
-    private Date checkOutDate;          //退房时间
+    private String  checkInDate;           //入住时间
+    private String  checkOutDate;          //退房时间
     private Integer count;              //预定数量
     private Integer bookingDays;        //预定天数
     private String linkUserName;        //入住人
@@ -135,19 +135,19 @@ public class ItripPersonalOrderRoomVO {
         this.roomBedTypeId = roomBedTypeId;
     }
 
-    public Date getCheckInDate() {
+    public String  getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(Date checkInDate) {
+    public void setCheckInDate(String checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public Date getCheckOutDate() {
+    public String getCheckOutDate() {
         return checkOutDate;
     }
 
-    public void setCheckOutDate(Date checkOutDate) {
+    public void setCheckOutDate(String checkOutDate) {
         this.checkOutDate = checkOutDate;
     }
 
