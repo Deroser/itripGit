@@ -107,5 +107,6 @@
     <orderEntry type="library" name="Maven: org.codehaus.woodstox:woodstox-core-asl:4.4.1" level="project" />
     <orderEntry type="library" name="Maven: org.noggit:noggit:0.6" level="project" />
     <orderEntry type="library" name="Maven: CCP:ssm-ccp:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.alipay.sdk:alipay-sdk-java:3.7.4.ALL" level="project" />
   </component>
 </module>

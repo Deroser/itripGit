@@ -75,4 +75,20 @@
         <property name="basePackage" value="com.kgc.dao"/>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
+
+    <!--支付宝手机网站支付bean-->
+    <bean class="com.kgc.config.AlipayConfig">
+        <property name="appId" value="2016102300742786"/>
+        <property name="rsaPrivateKey" value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCRflw9/RU9TW1QLd057tkx/Y9vcfiywrUwaVOE0y8yyqCOCb8VI82QIplDw6OwK1qSFa2WWAqtZwrjj8TgFRl6yGSQ9BwXwSy4CmdOiRNVCbM8+YkqGDoyVK5LkZAISNZkgZ8PF4u6+3fuJ0OrUnIgTTq4zKve870EBDGmgP+QmvTK9iLdLrBgt+AA6MFlMKQK+4roErxHyCDR40CCjGVPyOmjHGhoUWV0WnY+qAnKtTdtGXy6l+2tIyzO6i5lwNGeX7cGJVNrBcJYCh2Ban3PzPgIvSPP/3TUaFl3CWUiMrjnefTsDSb5byZ80YCdciwa/LGoBxeai/gKWJiaCaU/AgMBAAECggEAVIuMCI1/gR70DaqJKngMCEuixQ0CisYwSdB6su2ROL+cas1pF1y1wDMKwuD1xpJ6z/b+5yWEFt2Q60mJCvnX04yNO9pOVNNxLAUHoRBwhnLbj+wlc6uebc7ddZZBjz7cLo1QI5H4JZCpUV/Jp82B+hlGrUpp+WXDiYjyXSIK4Dj070mxzciFEQukTxCXibCaSwGemfJ2XnRkQaVIsUkKQyTLVnkT7e3cCr6qyRkd/RX81MvSVIlVAr0kqsyT2Z6UL0J/+2QSKkzevZkxg5+ObZNU4rnOTQM1wDAe0W6Je+KFBZKZj0vlIBZPpF+/k+3rzSOkFFfUHaZktTqHYN3msQKBgQDzjmzWo7OSI3Qp/V5QSav9fiI08NcwN7KLOr9zNa05Kg70O5NIf+aghOP8F6orm8EkT+dZ6awBmfASIq8mqYZhigQr3MEWXfOkkj3S2SoiOBtrsNGHNanTsypU6pwtfQHxCzI2dlYrPpZVvoajhuwDdnhcIYkQnnUkAploai+AVwKBgQCY7VTkJGJ2Vg0SJlQhI4ewagrOi0Y4Q9ON9CoH96uRyQHcwKKUKS4FdRTEWmPUO7ZVCirxQ8Bz+D4jpbHrsiDy3e/maLUMbVvWg71jSdhMZJK5WRCw5D2/RqwPOfF/IDno92uPCts0yaVtIvDSFEn4aSaLiAMaUH7zvAiXEtnRWQKBgEf6R2AHcQI3SBVAs6a2nwWDSUisBGxTiYhsDDhYHKFQNKspEBXU9qtpmpbdx4SruyCoHI8N569xdullJq4eW4Bn8WOlEcsyaNayAWNWmoUSX8grsUBsM4xE3rXJv+4Ri4lY7bX6suyEypj8fX3GWemMEXXo00D+E1BZFE0vVGpxAoGAWAK2iXobJImPijN+1XeSPsg4offrmLQIS7kKe31hQ0yQgtBmgKhWcROZuQtgSqN24ugwIJviZZunf3J7u+7PIZby2wLFt3o0kXdOBpdYIVb8Tilg/rzMgImWukiZoJUWXuoN/8u6rl2ik/W47N56V7mEUmcbighrl7BOrUtPCjkCgYEA5mkyHj5mLYh9+mYFNllBmsZDtP27cuNQOJDw0H5TcqfJM0vS0UhQsQgORcBh4/Kr1b8ECYnJn0zZC2izte0mdYQRK5ydPA/1FvUHGz72caBzBK/fY80FGJweOfALLVRI14HOGHc6HMZTTcKxSnrhKdiM60c1g+NkGkUO1oDY7SQ="/>
+        <property name="notify_url" value=""/>
+        <property name="return_url" value=""/>
+        <property name="url" value="https://openapi.alipaydev.com/gateway.do"/>
+        <property name="charset" value="UTF-8"/>
+        <property name="format" value="json"/>
+        <property name="alipayPrivateKey" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApbWm1ct/OeGDk3eG1uQqQWV9FoJT6xwCHT4vyycYyYlLGacAzVghXAxfwxYT0ug0Neb3L4+74IQXQzfZFmquMuGbZ4K1DfmrwStyZb63paWlKQU+C6QoxGcBV8bRVYY488zv2qB1O0t8H5O7EvVH62beOj6yLc0jqVjlXRY8KWAL+rlmZ+M+V+VKeg2frhJW98nWjynSz1PEsqOS22/gRDoKAw4pATFz8GrN08gJgGW/M2yv7m5ZViAYPbQysAUgjOtEGIpphWxcbwxHBiPGdCCZYgYpTyHVX3tCGZhdM1nB5UEN9p5nnlMVqXdg4zyHM0p85h+If8zWRvsVuEr6SQIDAQAB"/>
+        <property name="logPath" value="/logs"/>
+        <property name="signType" value="RSA2"/>
+        <property name="paymentSuccessUrl" value=""/>
+        <property name="paymentFailUrl" value=""/>
+    </bean>
 </beans>
