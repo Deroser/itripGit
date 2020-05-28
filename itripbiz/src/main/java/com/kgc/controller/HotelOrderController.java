@@ -282,6 +282,7 @@ public class HotelOrderController {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            //系统异常
             return DtoUtil.returnFail("系统异常", "10517");
         }
     }
