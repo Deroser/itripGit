@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kgc.dao.ItripHotelFeatureMapper">
+
+    <select id="getById" resultType="ItripHotelFeature">
+        select
+                id as id,         <!---->
+                hotelId as hotelId,         <!---->
+                featureId as featureId,         <!---->
+                creationDate as creationDate,         <!---->
+                createdBy as createdBy,         <!---->
+                modifyDate as modifyDate,         <!---->
+                modifiedBy as modifiedBy          <!---->
+        from itrip_hotel_feature
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="id != null">
+                and id=#{id}
+            </if>
+        </trim>
+    </select>
+    <resultMap id="videoDescResult" type="BizVideoDescVo">
+        <id property="hotelName" column="hotelName"/>
+        <collection property="hotelFeatureList" ofType="String">
+            <result property="string" column="featureNames"/>
+        </collection>
+        <collection property="tradingAreaNameList" ofType="String">
+            <result property="string" column="tradingAreaName"/>
+        </collection>
+    </resultMap>
+    <select id="getVideoDescByHotelId" resultMap="videoDescResult">
+        SELECT
+        t12. name AS featureNames,
+        table1.hotelName as hotelName,
+        t8. NAME as tradingAreaName
+        FROM
+        itrip_label_dic t12,
+        itrip_hotel_feature t13,
+        itrip_hotel table1,
+        itrip_area_dic t8,
+        itrip_hotel_trading_area t9
+        WHERE
+        t12.id = t13.featureId
+        and
+        table1.id = t13.hotelId
+        and
+        t8.id = t9.areaId
+        and
+        t9.hotelId = t13.hotelId
+        <if test="hotelId != null">
+            and t13.hotelId = #{hotelId}
+        </if>
+    </select>
+
+    <select id="getListByMap" resultType="ItripHotelFeature"
+            parameterType="java.util.Map">
+            select
+                id as id,      <!---->
+                hotelId as hotelId,      <!---->
+                featureId as featureId,      <!---->
+                creationDate as creationDate,      <!---->
+                createdBy as createdBy,      <!---->
+                modifyDate as modifyDate,      <!---->
+                modifiedBy as modifiedBy       <!---->
+            from itrip_hotel_feature
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="id != null and id!=''">
+                    and id=#{id}
+                </if>
+                <if test="hotelId != null and hotelId!=''">
+                    and hotelId=#{hotelId}
+                </if>
+                <if test="featureId != null and featureId!=''">
+                    and featureId=#{featureId}
+                </if>
+                <if test="creationDate != null and creationDate!=''">
+                    and creationDate=#{creationDate}
+                </if>
+                <if test="createdBy != null and createdBy!=''">
+                    and createdBy=#{createdBy}
+                </if>
+                <if test="modifyDate != null and modifyDate!=''">
+                    and modifyDate=#{modifyDate}
+                </if>
+                <if test="modifiedBy != null and modifiedBy!=''">
+                    and modifiedBy=#{modifiedBy}
+                </if>
+        </trim>
+        order by creationDate desc
+        <if test="beginPos != null and beginPos!='' and pageSize != null  and pageSize !='' ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getCountByMap" resultType="Integer" parameterType="java.util.Map">
+        select count(1) from itrip_hotel_feature
+        <trim prefix="where" prefixOverrides="and | or">
+                    <if test="id != null and id!=''">
+                        and id=#{id}
+                    </if>
+                    <if test="hotelId != null and hotelId!=''">
+                        and hotelId=#{hotelId}
+                    </if>
+                    <if test="featureId != null and featureId!=''">
+                        and featureId=#{featureId}
+                    </if>
+                    <if test="creationDate != null and creationDate!=''">
+                        and creationDate=#{creationDate}
+                    </if>
+                    <if test="createdBy != null and createdBy!=''">
+                        and createdBy=#{createdBy}
+                    </if>
+                    <if test="modifyDate != null and modifyDate!=''">
+                        and modifyDate=#{modifyDate}
+                    </if>
+                    <if test="modifiedBy != null and modifiedBy!=''">
+                        and modifiedBy=#{modifiedBy}
+                    </if>
+        </trim>
+    </select>
+
+    <insert id="save" parameterType="ItripHotelFeature">
+        insert into itrip_hotel_feature(
+            hotelId ,      <!---->
+            featureId ,      <!---->
+            creationDate ,      <!---->
+            createdBy ,      <!---->
+            modifyDate ,      <!---->
+            modifiedBy       <!---->
+        )
+        values(
+                    #{hotelId} ,      <!---->
+                    #{featureId} ,      <!---->
+                    #{creationDate} ,      <!---->
+                    #{createdBy} ,      <!---->
+                    #{modifyDate} ,      <!---->
+                    #{modifiedBy}       <!---->
+        )
+    </insert>
+
+    <update id="modify" parameterType="ItripHotelFeature">
+        update itrip_hotel_feature
+        <trim prefix="set" suffixOverrides="," suffix="where id= #{id}">
+                <if test="id != null and id!=''">
+                     id=#{id},
+                </if>
+                <if test="hotelId != null and hotelId!=''">
+                     hotelId=#{hotelId},
+                </if>
+                <if test="featureId != null and featureId!=''">
+                     featureId=#{featureId},
+                </if>
+                <if test="creationDate != null and creationDate!=''">
+                     creationDate=#{creationDate},
+                </if>
+                <if test="createdBy != null and createdBy!=''">
+                     createdBy=#{createdBy},
+                </if>
+                <if test="modifyDate != null and modifyDate!=''">
+                     modifyDate=#{modifyDate},
+                </if>
+                <if test="modifiedBy != null and modifiedBy!=''">
+                     modifiedBy=#{modifiedBy},
+                </if>
+        </trim>
+    </update>
+
+    <delete id="removeById" parameterType="Long">
+        delete from itrip_hotel_feature where id = #{id}
+    </delete>
+</mapper>
