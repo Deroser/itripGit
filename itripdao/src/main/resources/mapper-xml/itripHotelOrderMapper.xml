@@ -44,9 +44,9 @@
     <select id="getPersonalOrderRoomInfoByOrderid" resultType="ItripPersonalOrderRoomVO">
         select
         t16.bookingDays as bookingDays,
-        DATE_FORMAT(t16.checkInDate,'%Y-%m-%d %H:%i:%s') as checkInDate,
+        DATE_FORMAT(t16.checkInDate,'%Y-%m-%d') as checkInDate,
         DAYOFWEEK(t16.checkInDate) as checkInWeek,
-        DATE_FORMAT(t16.checkOutDate,'%Y-%m-%d %H:%i:%s') as checkOutDate,
+        DATE_FORMAT(t16.checkOutDate,'%Y-%m-%d') as checkOutDate,
         DAYOFWEEK(t16.checkOutDate) as checkOutWeek,
         t16.count as count,
         t16.hotelId as hotelId,
@@ -82,9 +82,9 @@
     <select id="getPersonalOrderRoomInfoByHotelid" resultType="ItripPersonalOrderRoomVO">
         select
         t16.bookingDays as bookingDays,
-        DATE_FORMAT(t16.checkInDate,'%Y-%m-%d %H:%i:%s') as checkInDate,
+        DATE_FORMAT(t16.checkInDate,'%Y-%m-%d') as checkInDate,
         DAYOFWEEK(t16.checkInDate) as checkInWeek,
-        DATE_FORMAT(t16.checkOutDate,'%Y-%m-%d %H:%i:%s') as checkOutDate,
+        DATE_FORMAT(t16.checkOutDate,'%Y-%m-%d') as checkOutDate,
         DAYOFWEEK(t16.checkOutDate) as checkOutWeek,
         t16.count as count,
         t16.hotelId as hotelId,
