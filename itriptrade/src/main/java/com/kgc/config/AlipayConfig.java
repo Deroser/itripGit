@@ -1,4 +1,4 @@
-﻿package com.kgc.config;
+package com.kgc.config;
 
 public class AlipayConfig {
 	// 商户appid
@@ -16,7 +16,7 @@ public class AlipayConfig {
 	// 返回格式
 	private  String format;
 	// 支付宝公钥
-	private  String alipayPrivateKey;
+	private  String alipayPublicKey;
 	// 日志记录目录
 	private  String logPath;
 	// RSA2
@@ -82,12 +82,12 @@ public class AlipayConfig {
 		this.format = format;
 	}
 
-	public String getAlipayPrivateKey() {
-		return alipayPrivateKey;
+	public String getAlipayPublicKey() {
+		return alipayPublicKey;
 	}
 
-	public void setAlipayPrivateKey(String alipauPrivateKey) {
-		this.alipayPrivateKey = alipauPrivateKey;
+	public void setAlipayPublicKey(String alipauPrivateKey) {
+		this.alipayPublicKey = alipauPrivateKey;
 	}
 
 	public String getLogPath() {

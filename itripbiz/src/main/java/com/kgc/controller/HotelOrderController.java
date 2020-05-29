@@ -168,7 +168,13 @@ public class HotelOrderController {
 
     @RequestMapping(value = "/queryOrderById/{orderId}", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public Dto queryOrderById(@PathVariable String orderId) {
+    public Dto queryOrderById(@PathVariable String orderId,
+                              HttpServletRequest request) {
+        //验证token
+        String token = request.getHeader("token");
+        if (!biztokenService.validates(request.getHeader("user-agent"), token)) {
+            return DtoUtil.returnFail("token失效，请重新登录", "10000");
+        }
         if (EmptyUtils.isEmpty(orderId)) {
             return DtoUtil.returnFail("订单id不能为空", "10533");
         }
