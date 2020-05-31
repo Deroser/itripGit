@@ -18,4 +18,6 @@ public interface ItripTradeEndsMapper {
 
 	public Integer removeById(@Param(value = "id") Long id)throws Exception;
 
+	public Integer updateItripTradeEnds(Map<String, Object> param)throws Exception;
+
 }

@@ -78,4 +78,9 @@ public class ItripHotelTempStoreServiceImpl implements ItripHotelTempStoreServic
         return true;
     }
 
+    @Override
+    public Integer updateRoomStore(Map<String, Object> param) throws Exception {
+        return itripHotelTempStoreMapper.updateRoomStore(param);
+    }
+
 }

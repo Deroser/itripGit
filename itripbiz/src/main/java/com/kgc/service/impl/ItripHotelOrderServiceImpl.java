@@ -2,10 +2,12 @@ package com.kgc.service.impl;
 
 import com.kgc.beans.model.ItripHotelOrder;
 import com.kgc.beans.model.ItripOrderLinkUser;
+import com.kgc.beans.model.ItripTradeEnds;
 import com.kgc.beans.model.ItripUserLinkUser;
 import com.kgc.beans.vo.*;
 import com.kgc.dao.ItripHotelRoomMapper;
 import com.kgc.dao.ItripOrderLinkUserMapper;
+import com.kgc.dao.ItripTradeEndsMapper;
 import com.kgc.service.ItripHotelOrderService;
 import com.kgc.dao.ItripHotelOrderMapper;
 import com.kgc.utils.BigDecimalUtil;
@@ -29,6 +31,8 @@ public class ItripHotelOrderServiceImpl implements ItripHotelOrderService {
     private ItripHotelRoomMapper itripHotelRoomMapper;
     @Resource
     private ItripOrderLinkUserMapper itripOrderLinkUserMapper;
+    @Resource
+    private ItripTradeEndsMapper itripTradeEndsMapper;
 
     public ItripHotelOrder getById(Long id) throws Exception {
         return itripHotelOrderMapper.getById(id);
@@ -117,6 +121,10 @@ public class ItripHotelOrderServiceImpl implements ItripHotelOrderService {
                 itripOrderLinkUser.setCreationDate(new Date());
                 itripOrderLinkUserMapper.save(itripOrderLinkUser);
             }
+//            ItripTradeEnds itripTradeEnds = new ItripTradeEnds();
+//            itripTradeEnds.setFlag("0");
+//            itripTradeEnds.setOrderNo(itripHotelOrder.getOrderNo());
+//            itripTradeEndsMapper.save(itripTradeEnds);
         }
         map.put("id",itripHotelOrder.getId().toString());
         map.put("orderNo",itripHotelOrder.getOrderNo());

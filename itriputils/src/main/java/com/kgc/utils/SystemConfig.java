@@ -38,6 +38,46 @@ public class SystemConfig {
 
     private String orderProcessCancel;
 
+    private String tradeEndUrl;
+
+    private boolean tradeUseProxy;
+
+    private String tradeProxyHost;
+
+    private Integer tradeProxyPort;
+
+    public String getTradeEndUrl() {
+        return tradeEndUrl;
+    }
+
+    public void setTradeEndUrl(String tradeEndUrl) {
+        this.tradeEndUrl = tradeEndUrl;
+    }
+
+    public boolean getTradeUseProxy() {
+        return tradeUseProxy;
+    }
+
+    public void setTradeUseProxy(boolean tradeUseProxy) {
+        this.tradeUseProxy = tradeUseProxy;
+    }
+
+    public String getTradeProxyHost() {
+        return tradeProxyHost;
+    }
+
+    public void setTradeProxyHost(String tradeProxyHost) {
+        this.tradeProxyHost = tradeProxyHost;
+    }
+
+    public Integer getTradeProxyPort() {
+        return tradeProxyPort;
+    }
+
+    public void setTradeProxyPort(Integer tradeProxyPort) {
+        this.tradeProxyPort = tradeProxyPort;
+    }
+
     public String getFileUploadPathString() {
         return fileUploadPathString;
     }

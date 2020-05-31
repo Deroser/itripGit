@@ -102,7 +102,7 @@ public class PaymentController {
 
     /*异步通知*/
     @RequestMapping(value ="/notify",method = RequestMethod.POST)
-    public void trackPaymentStatus(HttpServletRequest request, HttpServletResponse response) throws IOException, AlipayApiException {
+    public void trackPaymentStatus(HttpServletRequest request, HttpServletResponse response) throws Exception {
         /* *
          * 功能：支付宝服务器异步通知页面
          * 日期：2017-03-30
@@ -130,11 +130,12 @@ public class PaymentController {
                         : valueStr + values[i] + ",";
             }
             //乱码解决，这段代码在出现乱码时使用
-            valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");
+//            valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");
             params.put(name, valueStr);
         }
 
-        boolean signVerified = AlipaySignature.rsaCheckV1(params, alipayConfig.getAlipayPublicKey(), alipayConfig.getCharset(),alipayConfig.getSignType()); //调用SDK验证签名
+        boolean signVerified = AlipaySignature.rsaCheckV1(params, alipayConfig.getAlipayPublicKey(),
+                alipayConfig.getCharset(),alipayConfig.getSignType()); //调用SDK验证签名
 
         //——请在这里编写您的程序（以下代码仅作参考）——
 
@@ -144,29 +145,36 @@ public class PaymentController {
 	3、校验通知中的seller_id（或者seller_email) 是否为out_trade_no这笔单据的对应的操作方（有的时候，一个商户可能有多个seller_id/seller_email）
 	4、验证app_id是否为该商户本身。
 	*/
+        //商户订单号
+        String out_trade_no = new String(request.getParameter("out_trade_no").getBytes("ISO-8859-1"),"UTF-8");
+
+        //支付宝交易号
+        String trade_no = new String(request.getParameter("trade_no").getBytes("ISO-8859-1"),"UTF-8");
+
+        //交易状态
+        String trade_status = new String(request.getParameter("trade_status").getBytes("ISO-8859-1"),"UTF-8");
+
         if(signVerified) {//验证成功
-            //商户订单号
-            String out_trade_no = new String(request.getParameter("out_trade_no").getBytes("ISO-8859-1"),"UTF-8");
-
-            //支付宝交易号
-            String trade_no = new String(request.getParameter("trade_no").getBytes("ISO-8859-1"),"UTF-8");
-
-            //交易状态
-            String trade_status = new String(request.getParameter("trade_status").getBytes("ISO-8859-1"),"UTF-8");
 
             if(trade_status.equals("TRADE_FINISHED")){
                 //判断该笔订单是否在商户网站中已经做过处理
                 //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
                 //如果有做过处理，不执行商户的业务程序
                 /*执行自己的业务代码*/
-
+                if (!orderService.processed(out_trade_no)){
+                    orderService.paySuccess(out_trade_no,2,trade_no);
+                }
+                logger.info("订单"+out_trade_no+"交易完成");
                 //注意：
                 //退款日期超过可退款期限后（如三个月可退款），支付宝系统发送该交易状态通知
             }else if (trade_status.equals("TRADE_SUCCESS")){
                 //判断该笔订单是否在商户网站中已经做过处理
                 //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
                 //如果有做过处理，不执行商户的业务程序
-
+                if (!orderService.processed(out_trade_no)){
+                    orderService.paySuccess(out_trade_no,2,trade_no);
+                }
+                logger.info("订单"+out_trade_no+"交易成功");
                 //注意：
                 //付款完成后，支付宝系统发送该交易状态通知
             }
@@ -174,6 +182,7 @@ public class PaymentController {
             response.getWriter().println("success");
 
         }else {//验证失败
+            orderService.payFailed(out_trade_no,1,trade_no);
             response.getWriter().println("fail");
             //调试用，写文本函数记录程序运行情况是否正常
             //String sWord = AlipaySignature.getSignCheckContentV1(params);
@@ -217,6 +226,7 @@ public class PaymentController {
         boolean signVerified = AlipaySignature.rsaCheckV1(params, alipayConfig.getAlipayPublicKey(), alipayConfig.getCharset(),alipayConfig.getSignType()); //调用SDK验证签名
 
         //——请在这里编写您的程序（以下代码仅作参考）——
+        System.out.println("----------------------------"+signVerified);
         if(signVerified) {
             //商户订单号
             String out_trade_no = new String(request.getParameter("out_trade_no").getBytes("ISO-8859-1"),"UTF-8");

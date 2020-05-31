@@ -26,4 +26,6 @@ public interface ItripHotelTempStoreService {
     public List<StoreVO> queryRoomStore(Map<String, Object> param)throws Exception;
 
     public boolean validateRoomStore(Map<String, Object> param)throws Exception;
+
+    public Integer updateRoomStore(Map<String, Object> param)throws Exception;
 }

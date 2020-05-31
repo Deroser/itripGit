@@ -199,7 +199,7 @@
         UPDATE itrip_hotel_temp_store set store = store-#{count}
         where roomId = #{roomId}
         AND
-        DATE_FORMAT(store.recordDate,'%Y-%m-%d')
+        DATE_FORMAT(recordDate,'%Y-%m-%d')
         BETWEEN
         DATE_FORMAT(#{startTime},'%Y-%m-%d')AND DATE_FORMAT(#{endTime},'%Y-%m-%d')
     </update>

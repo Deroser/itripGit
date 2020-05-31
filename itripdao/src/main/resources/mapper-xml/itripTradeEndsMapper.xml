@@ -35,7 +35,6 @@
                     and flag=#{flag}
                 </if>
         </trim>
-        order by creationDate desc
         <if test="beginPos != null and beginPos!='' and pageSize != null  and pageSize !='' ">
             limit #{beginPos},#{pageSize}
         </if>
@@ -85,4 +84,8 @@
     <delete id="removeById" parameterType="Long">
         delete from itrip_trade_ends where id = #{id}
     </delete>
+
+    <update id="updateItripTradeEnds" parameterType="java.util.Map">
+        UPDATE itrip_trade_ends set flag=#{flag} where flag=#{oldFlag}
+    </update>
 </mapper>

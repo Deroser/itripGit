@@ -8,6 +8,7 @@ import com.kgc.beans.vo.*;
 import com.kgc.beans.vo.store.StoreVO;
 import com.kgc.service.*;
 import com.kgc.utils.*;
+import io.swagger.models.auth.In;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,6 +40,8 @@ public class HotelOrderController {
     private ItripHotelTempStoreService itripHotelTempStoreService;
     @Resource
     private SystemConfig systemConfig;
+    @Resource
+    private ItripTradeEndsService itripTradeEndsService;
 
     @RequestMapping(value = "/getpersonalorderlist", method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
@@ -337,7 +340,6 @@ public class HotelOrderController {
                 //生成订单号
                 StringBuffer orderNo = new StringBuffer();
                 orderNo.append(systemConfig.getMachineCode());
-                orderNo.append(systemConfig.getMachineCode());
                 orderNo.append(DateUtil.format(new Date(),"yyyyMMddHHmmss"));
                 orderNo.append(md5);
                 itripHotelOrder.setOrderNo(orderNo.toString());
@@ -356,5 +358,40 @@ public class HotelOrderController {
         }
     }
 
+    @RequestMapping(value = "/scanTradeEnd", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public Dto scanTradeEnd(){
+        Map<String ,Object> map = new HashMap();
+        map.put("flag","1");
+        map.put("oldFlag","0");
+        try {
+            itripTradeEndsService.itripModifyItripTradeEnds(map);
+            List<ItripTradeEnds> listByMap = itripTradeEndsService.getListByMap(map);
+            if (EmptyUtils.isNotEmpty(listByMap)){
+                for (ItripTradeEnds itripTradeEnds : listByMap) {
+                    Map<String ,Object> param = new HashMap();
+                    param.put("orderNo",itripTradeEnds.getOrderNo());
+                    List<ItripHotelOrder> listByMap1 = itripHotelOrderService.getListByMap(param);
+                    for (ItripHotelOrder itripHotelOrder : listByMap1) {
+                        Map<String, Object> roomStoreMap = new HashMap<>();
+                        roomStoreMap.put("startTime", itripHotelOrder.getCheckInDate());
+                        roomStoreMap.put("endTime", itripHotelOrder.getCheckOutDate());
+                        roomStoreMap.put("roomId", itripHotelOrder.getRoomId());
+                        roomStoreMap.put("count", itripHotelOrder.getCount());
+                        itripHotelTempStoreService.updateRoomStore(roomStoreMap);
+                    }
+                }
+                map.put("flag","2");
+                map.put("oldFlag","1");
+                itripTradeEndsService.itripModifyItripTradeEnds(map);
+                return DtoUtil.returnSuccess();
+            }else {
+                return DtoUtil.returnFail("没有查询到相应记录","10535");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return DtoUtil.returnFail("系统异常","10536");
+        }
 
+    }
 }
