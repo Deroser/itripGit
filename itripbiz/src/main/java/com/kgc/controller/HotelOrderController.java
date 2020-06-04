@@ -9,8 +9,10 @@ import com.kgc.beans.vo.store.StoreVO;
 import com.kgc.service.*;
 import com.kgc.utils.*;
 import io.swagger.models.auth.In;
+import org.apache.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +28,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/api/hotelorder")
 public class HotelOrderController {
+    private Logger logger = Logger.getLogger(HotelOrderController.class);
     @Autowired
     private RedisAPI redisAPI;
     @Resource
@@ -393,5 +396,86 @@ public class HotelOrderController {
             return DtoUtil.returnFail("系统异常","10536");
         }
 
+    }
+
+    //10分钟刷新一次
+    @Scheduled(cron = "0 0/10 * * * ?")
+    public void flushCancelStatus(){
+        logger.info("执行刷新任务=======================10");
+        try {
+            boolean flag = itripHotelOrderService.flushOrderStatus(1);
+            logger.info(flag ? "刷新成功" : "刷新失败");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //100分钟刷新一次
+    @Scheduled(cron = "0 0/100 * * * ?")
+    public void flushOrderStatus(){
+        logger.info("执行刷新任务=======================23");
+        try {
+            boolean flag = itripHotelOrderService.flushOrderStatus(0);
+            logger.info(flag ? "刷新成功" : "刷新失败");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping(value = "/querysuccessorderinfo/{id}", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public Dto querysuccessorderinfo(@PathVariable Long id,HttpServletRequest request){
+        //验证token
+        String token = request.getHeader("token");
+        if (!biztokenService.validates(request.getHeader("user-agent"), token)) {
+            return DtoUtil.returnFail("token失效，请重新登录", "10000");
+        }
+        if (EmptyUtils.isEmpty(id)) {
+            return DtoUtil.returnFail("id不能为空", "10519");
+        }
+        try {
+            ItripHotelOrder itripHotelOrder = itripHotelOrderService.getById(id);
+            ItripHotelRoom itripHotelRoom = itripHotelRoomService.getById(id);
+            Map<String,Object> resultMap = new HashMap<>();
+            resultMap.put("orderNo",itripHotelOrder.getOrderNo());
+            resultMap.put("payType",itripHotelOrder.getPayType());
+            resultMap.put("payAmount",itripHotelOrder.getPayAmount());
+            resultMap.put("id",itripHotelOrder.getId());
+            resultMap.put("roomTitle",itripHotelRoom.getRoomTitle());
+            resultMap.put("hotelName",itripHotelOrder.getHotelName());
+            return DtoUtil.returnSuccess("获取成功",resultMap);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return DtoUtil.returnFail("获取数据失败","10520");
+        }
+    }
+
+    @RequestMapping(value = "/updateorderstatusandpaytype", method = RequestMethod.POST, produces = "application/json")
+    @ResponseBody
+    public Dto<RoomStoreVO> updateorderstatusandpaytype(@RequestBody ItripModifyHotelOrderVO vo,
+                                          HttpServletRequest request){
+        //验证token
+        String token = request.getHeader("token");
+        ItripUser currentUser = JSONObject.parseObject(redisAPI.get(token), ItripUser.class);
+        if (!biztokenService.validates(request.getHeader("user-agent"), token)) {
+            return DtoUtil.returnFail("token失效，请重新登录", "10000");
+        }
+        if (EmptyUtils.isEmpty(vo)) {
+            return DtoUtil.returnFail("不能提交空，请填写订单信息", "10523");
+        }
+        ItripHotelOrder itripHotelOrder = new ItripHotelOrder();
+        BeanUtils.copyProperties(vo,itripHotelOrder);
+        itripHotelOrder.setOrderStatus(2);
+        itripHotelOrder.setModifiedBy(currentUser.getId());
+        try {
+            Integer flag = itripHotelOrderService.modify(itripHotelOrder);
+            if (flag > 0){
+                return DtoUtil.returnSuccess("修改订单成功");
+            }
+            return DtoUtil.returnFail("修改订单失败","10522");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return DtoUtil.returnFail("修改订单失败","10522");
+        }
     }
 }

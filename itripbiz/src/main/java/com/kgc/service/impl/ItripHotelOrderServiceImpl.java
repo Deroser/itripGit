@@ -5,15 +5,13 @@ import com.kgc.beans.model.ItripOrderLinkUser;
 import com.kgc.beans.model.ItripTradeEnds;
 import com.kgc.beans.model.ItripUserLinkUser;
 import com.kgc.beans.vo.*;
-import com.kgc.dao.ItripHotelRoomMapper;
-import com.kgc.dao.ItripOrderLinkUserMapper;
-import com.kgc.dao.ItripTradeEndsMapper;
+import com.kgc.dao.*;
 import com.kgc.service.ItripHotelOrderService;
-import com.kgc.dao.ItripHotelOrderMapper;
 import com.kgc.utils.BigDecimalUtil;
 import com.kgc.utils.Constants;
 import com.kgc.utils.EmptyUtils;
 import com.kgc.utils.Page;
+import io.swagger.models.auth.In;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -33,6 +31,8 @@ public class ItripHotelOrderServiceImpl implements ItripHotelOrderService {
     private ItripOrderLinkUserMapper itripOrderLinkUserMapper;
     @Resource
     private ItripTradeEndsMapper itripTradeEndsMapper;
+    @Resource
+    private ItripHotelTempStoreMapper itripHotelTempStoreMapper;
 
     public ItripHotelOrder getById(Long id) throws Exception {
         return itripHotelOrderMapper.getById(id);
@@ -78,6 +78,14 @@ public class ItripHotelOrderServiceImpl implements ItripHotelOrderService {
 
     public Integer modify(ItripHotelOrder itripHotelOrder) throws Exception {
         itripHotelOrder.setModifyDate(new Date());
+        ItripHotelOrder byId = itripHotelOrderMapper.getById(itripHotelOrder.getId());
+        Map<String, Object> param = new HashMap<>();
+        param.put("startTime", byId.getCheckInDate());
+        param.put("endTime", byId.getCheckOutDate());
+        param.put("roomId", byId.getRoomId());
+        param.put("hotelId", byId.getHotelId());
+        param.put("count", byId.getCount());
+        itripHotelTempStoreMapper.updateRoomStore(param);
         return itripHotelOrderMapper.modify(itripHotelOrder);
     }
 
@@ -121,14 +129,21 @@ public class ItripHotelOrderServiceImpl implements ItripHotelOrderService {
                 itripOrderLinkUser.setCreationDate(new Date());
                 itripOrderLinkUserMapper.save(itripOrderLinkUser);
             }
-//            ItripTradeEnds itripTradeEnds = new ItripTradeEnds();
-//            itripTradeEnds.setFlag("0");
-//            itripTradeEnds.setOrderNo(itripHotelOrder.getOrderNo());
-//            itripTradeEndsMapper.save(itripTradeEnds);
         }
         map.put("id",itripHotelOrder.getId().toString());
         map.put("orderNo",itripHotelOrder.getOrderNo());
         return map;
+    }
+
+    @Override
+    public boolean flushOrderStatus(Integer type) throws Exception {
+        Integer flag ;
+        if (type == 1){
+            flag = itripHotelOrderMapper.flushCancelOrderStatus();
+        }else {
+            flag = itripHotelOrderMapper.flushSuccessOrderStatus();
+        }
+        return flag > 0 ? true:false;
     }
 
 }

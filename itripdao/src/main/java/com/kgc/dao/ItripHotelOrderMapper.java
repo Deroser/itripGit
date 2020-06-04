@@ -29,4 +29,8 @@ public interface ItripHotelOrderMapper {
 
 	public Integer removeById(@Param(value = "id") Long id)throws Exception;
 
+	public Integer flushCancelOrderStatus()throws Exception;
+
+	public Integer flushSuccessOrderStatus()throws Exception;
+
 }

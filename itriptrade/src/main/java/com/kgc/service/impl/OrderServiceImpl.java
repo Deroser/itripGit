@@ -53,10 +53,9 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private void SendGet(String url,String orderNo) {
-        String urlNameString = url;
         URLConnection urlConnection;
         try {
-            URL realUrl = new URL(urlNameString);
+            URL realUrl = new URL(url);
             //打开链接发送请求
             if (systemConfig.getTradeUseProxy()){
                 Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(

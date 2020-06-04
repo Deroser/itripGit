@@ -602,4 +602,19 @@
     <delete id="removeById" parameterType="Long">
         delete from itrip_hotel_order where id = #{id}
     </delete>
+
+    <!--定时任务刷新订单状态-->
+    <update id="flushCancelOrderStatus">
+        UPDATE itrip_hotel_order set orderStatus = 1
+        WHERE orderStatus = 0
+        AND
+        timestampdiff(second,creationDate,NOW()) > 2 * 3600
+    </update>
+    <!--支付成功后修改订单状态-->
+    <update id="flushSuccessOrderStatus">
+        UPDATE itrip_hotel_order set orderStatus = 3
+        WHERE orderStatus = 2
+        AND
+        timestampdiff(second,checkOutDate,NOW()) > 0
+    </update>
 </mapper>

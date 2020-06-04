@@ -44,4 +44,6 @@ public interface ItripHotelOrderService {
 
     //添加订单数据
     public Map<String ,Object> addItripOrderAsLinkUser(ItripHotelOrder itripHotelOrder, List<ItripUserLinkUser> itripUserLinkUsers)throws Exception;
+
+    public boolean flushOrderStatus(Integer type)throws Exception;
 }
