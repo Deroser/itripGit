@@ -243,11 +243,12 @@ public class SystemCommentController {
                                     String suffixString = myFileName.substring(file.getOriginalFilename().indexOf("."));
                                     String fileName = itripUser.getId() + "-" + System.currentTimeMillis() + "-" + ((int) (Math.random() * 10000000)) + suffixString;
                                     //定义上传路径
-                                    String path = request.getSession().getServletContext().getRealPath(File.separator + fileName);
+//                                    String path = request.getSession().getServletContext().getRealPath(File.separator + fileName);
+                                    String path = "/data/itrip/uploadimg/comment"+File.separator + fileName;
                                     File localFile = new File(path);
                                     file.transferTo(localFile);
-//                                    dataList.add("http://img.itrip.test.com/comment/"+fileName);
-                                    dataList.add(path);
+                                    dataList.add("http://img.itrip.test.com/comment/"+fileName);
+//                                    dataList.add(path);
                                 }
                             }
                         } catch (Exception e) {
