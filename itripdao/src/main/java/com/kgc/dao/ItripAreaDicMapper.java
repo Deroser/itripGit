@@ -4,7 +4,11 @@ import com.kgc.beans.vo.BizCityIdAndNameVo;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripAreaDicMapper
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripAreaDicMapper {
 
 	public ItripAreaDic getById(@Param(value = "id") Long id)throws Exception;

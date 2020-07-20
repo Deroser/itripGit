@@ -9,7 +9,11 @@ import com.kgc.beans.vo.ItripCommentScoreAvgVo;
 import com.kgc.beans.vo.ItripSearchCommentVO;
 import com.kgc.utils.Page;
 
-
+/**
+ * ItripCommentService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripCommentService {
 
     public ItripComment getById(Long id)throws Exception;

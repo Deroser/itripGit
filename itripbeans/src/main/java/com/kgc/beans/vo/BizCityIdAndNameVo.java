@@ -1,5 +1,9 @@
 package com.kgc.beans.vo;
-
+/**
+ * BizCityIdAndNameVo
+ * 李文俊
+ * 2020.7.20
+ */
 public class BizCityIdAndNameVo {
     private Long id;
     private String name;

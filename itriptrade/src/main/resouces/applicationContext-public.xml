@@ -85,7 +85,7 @@
     </bean>
     <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
         <constructor-arg ref="jedisPoolConfig"/>
-        <constructor-arg value="127.0.0.1"/>
+        <constructor-arg value="192.168.11.180"/>
         <constructor-arg value="6379"/>
         <constructor-arg value="3000"/>
     </bean>
@@ -93,17 +93,17 @@
     <!--支付宝手机网站支付bean-->
     <bean class="com.kgc.config.AlipayConfig">
         <property name="appId" value="2016102300742786"/>
-        <property name="rsaPrivateKey" value="MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC6oCmiu5ABkc4IWBycCmYuj0JDBJ82CrAtOx2kdG+vPHaJsEwz6x7fX3n/SgqybnM1imaKWsLM1V+wKNyeqAeW4r/hPWX5gsURG8Ze3R0R28emHIGYKLpwrUW92X9mHuga+bZuk7QfKpgX/DqDgMbhxjuJg8ILo57eWILmhOsDB8xC6HqjFrghhdSsh4EF4HajKTm7B/4kTywks/ZgShk+zpQlQR38rTjO9nZ2Tf8LEo8To7y3euOsJasyYTko7rmeoVd9oN4yUyIkoongOOXqte/QbDi1hlJVwGj7S0EVTHhbid76kyPI3G8CHPoD1ilOEN6PLOfeg1U2bMw1FUNlAgMBAAECggEBAIbXYj3qN0prBuqQf1tfSCUr7TxvAnoRjumfZPOGDYwXq64ga2632z6ZxZPm84OouiVdMmmU2lsVcGXfoEgiMBmdC/a6XgvBqJGL9/Bi4rYcjkw/HIPMKalwCIv7skke26Vh96Y9ok9Cf1IVNFH/obNPf4UEZhfyyL7uROY583Pj2cblNqWDSbKAhZ7NTK7mRzkyTNkKHELsbn/ItaG8NR1DzG8j5s3CUDcTbDPTjC05qRkB5UDiA9h93X9ZDPCE1gtmXCUffNfPvzv7glYKfRXTKUoK6Xx+tiFGADVKFZZO43WR8FY8i+tKyyETLbvg4R8FPUvCOdsSrlCzDPJgQwECgYEA6x2joz6vQRI6aKCxccM+NslIAQRIWpNKe99u+AG4LnEQ/3AOOliKZ8ROWWmjWSRUhGM934eXGVEBCyBtGGmEQb333ogMRuaNOLQRVIbaBEboqRM0GPnPBVmCf2Bz5ZbbiPZQAiLxikW6MVBFZ3/PbY4U/SC4c+cpm8Q0L7ebsHkCgYEAyzPkn0gQiSaCFxAEBB9INkCXcllKL15IG8TGwl4gpnW4gup7TUABQ91EZzptUZoSIUBc4Ja+Wmj5V6P5rx67AjEKfGaH/pUDw+vcFY0zs1EbAJoTuy3PVXZm/hZ7bzbLRqaiilG+kNztyV+AjwR86P2U4LDY2bTDa9YfXZ4k500CgYA4paV9eWbkOK4V81GNZUsiDBDrHcsI95/khIrJ+jAUEG3V/XuQFzERmzx9UnRmz9gFJZwMtTB0iw3DToa6cQHKjSihVwoOMxInbUsXoH36tdLsmZHdyqJUWaKVafnCgTxXnXDdcunbNL2NkBeIvkSN0sO/0Rhf5Hwj6XvhW02JkQKBgQC1pown/6oYkP4WU9DjRnutVAyOwldZBPV9LWlo8/BIHlB1Z9wV8LOw0SqHBWoYWpz+cKUWeGtuMw1DVWitLdGLYf+3uYi1As085an28iVXlZeH8DTXTVpdUd08IyjxAJCzdd8zu2OZ6IYBUIiCUUbAmX/vZOhVpgxUaDPd4rOmuQKBgGwTOJRmiBRcvvsSmsqZhgOIJSmE71ZMbRucMtaxe7GzjlKzxIbuUbOpVR0bwa6PxKhXrButDRvU9X8utYDS8MgTyDjoeGHDutusQBFx+5tbYiXFAineHZppFPg9hyl4O3y9XdUSBNxehTyVYxw8GZCX1NnMqPdSx2a4h5/sA2Dy"/>
+        <property name="rsaPrivateKey" value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC57+VOkJmxe9ddrWvG+EMtcGeCa8u5nEUqnt1qFQn8xW6zIR+9yZLdE5EV7JqZQZTRpxkf1NTan54SwxHk73R3FA5Qox/ZPN8zM5KLjJVn+/p/qNoMiTFkvmTLCn7rbuBckYjtW7e2qqbERudJ/fa0rhhNaK+M692rtYKG4ztaoUsZExgnfcFpC/VeSfXQG75Aq7uFVlvRVGtXk6+LbhD0+N569GTrHqNchxAPoN/4Ibwr9U6zbx68ZunQ8xFOTnlRQra9zb1YWQfjV3Y3m2fNnatMc2ziSBBsHqN1j8AfDtLJBuDpVwmrLRjAHPHSuF38RE22D4dB5B0YfZKQVvHxAgMBAAECggEAL8WI/sR8GHOfA7x4wmgqqlQE5CdZ8lhKFQc4D/dT15PKO0+5XgOaLh7G2gEuP03wNGVgOSNvhLQZ4uwnftBe9fE7NFCU8DWJixgnAJ+gC1VcKMxzKWFeRWn9b4VE0qxsDJx/t6wm6VGzAx7MceBEMGvCZrEM2YIINAOwg4OCTmhNsEI7FPa14iZ1SY1JRgmI97Ztxjt+yvadyyATVWU9fJ9PqgGh1lmv4NwshYzxEsvH6ZTzBr0Nt0qzbHOVndYPr5Me1PiaDtKTyyVGICzky9C+X0NiDO5sckRi6RMv8xkLszMq+xZuDTKkI5zit4TLuzF4vnakFH2dB3qL9CTVgQKBgQDyM5NfsRF1YbOBx8RVLQDDm7b8rTg7otgdDWCBMMozmu1AgawSIdCzDoMheezsEh/v7x+a29KQq/uUX+PS5PnaKMfdY3+5iIQ2GB0EntjUHl0rgRNXUNx8OmlLkj7/KvJ8G64nUjj9BeRt1ZAt141LsirGqVSTW5IZ6u1SFepC2QKBgQDEh7lC63bdqse4hXwwSsJypLjR/abKm7AEbyWcxXunE5wUDl2UnmBcsugHAZDxvle/sGZ2g+YSufb0JptcMGmrwJiNB1yn1pJ2DxTXQc9Nhh4izveVm9+IJHAmByoPVutua+1Sv6EG9xG7RYNlIl7tb5LibMvxNOXUhDNdqKmI2QKBgQClcHF0ZeEFCy2wsqH7hHgHJXBC/JdytPNmNOL8nDUiNutkqq682/hQttL/pOcfAepq3C38e7dDNxbr7OwT/HBmgoCzSunN8+BLiwEXTOHTUsJVmx94/zT8bnHKOyVo6w8jk0zMcy+WNdYo6D5J8fkEAbmSZcvttBkCNyTQc0PHUQKBgFGD9hzCq6/vuR1ZCJTDPXntxtcavYbGIrEEJPaslshLAu7ysnAFbPSmJEVbqfILQDw6/5Tiypgz2DGWndQUJJBftyavyge3oVIkmUFbg4+lNHS9ocXFPGcsrfOn/xMTu102mN48q57G9ezWPVTCd9tF7wfJlqG6jiWim+eaII+pAoGAL5rslSiNJ1WIWjaaT1TZg6oTK65v6KhG4ELcRnjJPnyiwv+4z4wEHBBm0uP2UW4SQGdgCAu6nDIWaCeIUJvrvsIMNcWFUYndTzQD9aWEAPDFakhXPZ+WizWWz5V+nm30nlnSgOdIPkccVVPKqrAldBR3iQIauVIkJERa5cqAgGg="/>
         <property name="notify_url" value="http://deroser.qicp.vip/trade/api/notify"/>
-        <property name="return_url" value="http://deroser.qicp.vip/api/return"/>
+        <property name="return_url" value="http://deroser.qicp.vip/trade/api/return"/>
         <property name="url" value="https://openapi.alipaydev.com/gateway.do"/>
         <property name="charset" value="UTF-8"/>
         <property name="format" value="json"/>
         <property name="alipayPublicKey" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApbWm1ct/OeGDk3eG1uQqQWV9FoJT6xwCHT4vyycYyYlLGacAzVghXAxfwxYT0ug0Neb3L4+74IQXQzfZFmquMuGbZ4K1DfmrwStyZb63paWlKQU+C6QoxGcBV8bRVYY488zv2qB1O0t8H5O7EvVH62beOj6yLc0jqVjlXRY8KWAL+rlmZ+M+V+VKeg2frhJW98nWjynSz1PEsqOS22/gRDoKAw4pATFz8GrN08gJgGW/M2yv7m5ZViAYPbQysAUgjOtEGIpphWxcbwxHBiPGdCCZYgYpTyHVX3tCGZhdM1nB5UEN9p5nnlMVqXdg4zyHM0p85h+If8zWRvsVuEr6SQIDAQAB"/>
         <property name="logPath" value="/logs"/>
         <property name="signType" value="RSA2"/>
-        <property name="paymentSuccessUrl" value="http://localhost:8082/index.html#/orderpaystate?orderNo=%s&amp;id=%s"/>
-        <property name="paymentFailUrl" value="http://localhost:8082/index.html#/orderpaystate?orderNo=%s&amp;id=%s&amp;state=0"/>
+        <property name="paymentSuccessUrl" value="http://localhost:8080/index.html#/orderpaystate?orderNo=%s&amp;id=%s"/>
+        <property name="paymentFailUrl" value="http://localhost:8080/index.html#/orderpaystate?orderNo=%s&amp;id=%s&amp;state=0"/>
     </bean>
 
     <bean name="systemConfig" class="com.kgc.utils.SystemConfig">

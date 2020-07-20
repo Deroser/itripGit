@@ -4,9 +4,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * Created by ZhangJiTao on 2018-04-27.
+ * SearchHotCityVO
+ * 李文俊
+ * 2020.7.20
  */
-
 public class SearchHotelVO {
     //[非必填] 按照某个字段升序,取值为(isOkCount或avgScore或minPrice或hotelLevel)
     private String ascSort;

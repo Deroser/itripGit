@@ -10,9 +10,11 @@ package com.kgc.utils;
  * 搜索search：2开头（20000）<br/>
  * 认证auth：3开头（30000）<br/>
  * 支付trade：4开头（40000）<br/>
- * @author hduser
+ * 李文俊
+ * 2020.7.20
  *
  */
+
 public class ErrorCode {
 
 	/*认证模块错误码-start*/

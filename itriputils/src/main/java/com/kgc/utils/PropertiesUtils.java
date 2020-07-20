@@ -4,7 +4,9 @@ import java.io.InputStreamReader;
 import java.util.Properties;
 
 /**
- * Created by sam on 2018/3/12.
+ * PropertiesUtils
+ * 李文俊
+ * 2020.7.20
  */
 public class PropertiesUtils {
     private static Properties props;

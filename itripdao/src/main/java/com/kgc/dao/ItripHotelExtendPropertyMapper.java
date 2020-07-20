@@ -3,7 +3,11 @@ import com.kgc.beans.model.ItripHotelExtendProperty;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripHotelExtendPropertyMapper
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripHotelExtendPropertyMapper {
 
 	public ItripHotelExtendProperty getById(@Param(value = "id") Long id)throws Exception;

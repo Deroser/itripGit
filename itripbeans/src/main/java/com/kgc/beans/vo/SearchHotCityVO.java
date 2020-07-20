@@ -1,7 +1,9 @@
 package com.kgc.beans.vo;
 
 /**
- * Created by ASUS on 2018/7/23.
+ * SearchHotCityVO
+ * 李文俊
+ * 2020.7.20
  */
 public class SearchHotCityVO {
     //城市Id

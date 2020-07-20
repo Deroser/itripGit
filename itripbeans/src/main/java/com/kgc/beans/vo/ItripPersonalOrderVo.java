@@ -2,7 +2,11 @@ package com.kgc.beans.vo;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
+/**
+ * ItripPersonalOrderVo
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripPersonalOrderVo {
     private Long id;
     private Date checkInDate;//7

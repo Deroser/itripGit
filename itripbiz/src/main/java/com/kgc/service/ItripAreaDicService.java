@@ -3,7 +3,11 @@ package com.kgc.service;
 import com.kgc.beans.vo.BizCityIdAndNameVo;
 
 import java.util.List;
-
+/**
+ * ItripAreaDicService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripAreaDicService {
     /**
      * 查询国内外热门城市

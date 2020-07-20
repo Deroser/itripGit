@@ -1,5 +1,9 @@
 package com.kgc.beans.vo;
-
+/**
+ * ItripModifyUserLinkUserVO
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripModifyUserLinkUserVO {
 
     private Long id;

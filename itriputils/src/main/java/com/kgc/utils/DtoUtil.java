@@ -2,8 +2,10 @@ package com.kgc.utils;
 
 /**
  * 用于返回Dto的工具类
- * Created by XX on 17-5-8.
+ * 李文俊
+ * 2020.7.20
  */
+
 public class DtoUtil {
 
     public static String success="true";

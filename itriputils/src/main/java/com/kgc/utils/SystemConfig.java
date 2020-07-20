@@ -1,5 +1,9 @@
 package com.kgc.utils;
-
+/**
+ * SystemConfig
+ * 李文俊
+ * 2020.7.20
+ */
 public class SystemConfig {
     /**
      * 短信平台账号 ACCOUNT SID

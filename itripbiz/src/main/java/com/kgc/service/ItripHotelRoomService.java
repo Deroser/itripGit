@@ -8,7 +8,11 @@ import com.kgc.beans.vo.ItripHotelRoomAndTimeVo;
 import com.kgc.beans.vo.ItripHotelRoomVo;
 import com.kgc.utils.Page;
 
-
+/**
+ * ItripHotelRoomService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripHotelRoomService {
 
     public ItripHotelRoom getById(Long id)throws Exception;

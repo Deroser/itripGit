@@ -11,7 +11,10 @@ import java.util.List;
 /**
  * 前端输入-修改订单VO
  * Created by donghai on 2017/5/18.
+ * 李文俊
+ * 2020.7.20
  */
+
 @ApiModel(value = "ItripModifyHotelOrderVO", description = "修改订单VO")
 public class ItripModifyHotelOrderVO implements Serializable {
     @ApiModelProperty("[必填，主键]")

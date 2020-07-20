@@ -1,5 +1,9 @@
 package com.kgc.beans.vo;
-
+/**
+ * ItripSearchCommentVO
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripSearchCommentVO {
 
     private Long hotelId;

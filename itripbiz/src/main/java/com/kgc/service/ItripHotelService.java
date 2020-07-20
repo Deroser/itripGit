@@ -6,7 +6,11 @@ import com.kgc.utils.Page;
 
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripHotelService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripHotelService {
     public String  gethotelPolicyById(Long id)throws Exception;
 

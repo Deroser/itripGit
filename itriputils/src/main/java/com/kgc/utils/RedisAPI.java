@@ -8,7 +8,9 @@ import redis.clients.jedis.JedisPool;
 import javax.annotation.Resource;
 
 /**
- * redisAPI
+ * RedisAPI
+ * 李文俊
+ * 2020.7.20
  */
 @Component
 public class RedisAPI {

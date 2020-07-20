@@ -4,7 +4,11 @@ import com.kgc.beans.vo.ItripLabelDicVo;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripLabelDicMapper
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripLabelDicMapper {
 
 	public ItripLabelDic getById(@Param(value = "id") Long id)throws Exception;

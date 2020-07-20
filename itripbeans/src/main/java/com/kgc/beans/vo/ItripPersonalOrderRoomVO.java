@@ -5,8 +5,10 @@ import java.util.Date;
 
 /**
  * 返回前端-根据订单ID查看个人订单详情-房型相关信息VO
- * Created by hanlu on 2017/5/18.
+ * 李文俊
+ * 2020.7.20
  */
+
 public class ItripPersonalOrderRoomVO {
 
 

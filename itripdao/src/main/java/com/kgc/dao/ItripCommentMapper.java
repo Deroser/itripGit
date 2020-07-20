@@ -7,7 +7,11 @@ import com.kgc.beans.vo.ItripSearchCommentVO;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripCommentMapper
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripCommentMapper {
 
 	public ItripComment getById(@Param(value = "id") Long id)throws Exception;

@@ -26,7 +26,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
+/**
+ * PaymentController
+ * 李文俊
+ * 2020.7.20
+ */
 @Controller
 @RequestMapping("/api")
 public class PaymentController {
@@ -119,6 +123,7 @@ public class PaymentController {
          */
 
         //获取支付宝POST过来反馈信息
+        System.out.println("异步------------------------------------------");
         Map<String,String> params = new HashMap<String,String>();
         Map<String,String[]> requestParams = request.getParameterMap();
         for (Iterator<String> iter = requestParams.keySet().iterator(); iter.hasNext();) {
@@ -165,6 +170,7 @@ public class PaymentController {
                     orderService.paySuccess(out_trade_no,2,trade_no);
                 }
                 logger.info("订单"+out_trade_no+"交易完成");
+                System.out.println("完成------------------------------------------");
                 //注意：
                 //退款日期超过可退款期限后（如三个月可退款），支付宝系统发送该交易状态通知
             }else if (trade_status.equals("TRADE_SUCCESS")){
@@ -175,6 +181,7 @@ public class PaymentController {
                     orderService.paySuccess(out_trade_no,2,trade_no);
                 }
                 logger.info("订单"+out_trade_no+"交易成功");
+                System.out.println("成功------------------------------------------");
                 //注意：
                 //付款完成后，支付宝系统发送该交易状态通知
             }
@@ -182,6 +189,7 @@ public class PaymentController {
             response.getWriter().println("success");
 
         }else {//验证失败
+            System.out.println("失败------------------------------------------");
             orderService.payFailed(out_trade_no,1,trade_no);
             response.getWriter().println("fail");
             //调试用，写文本函数记录程序运行情况是否正常
@@ -208,6 +216,7 @@ public class PaymentController {
          */
 
         //获取支付宝GET过来反馈信息
+        System.out.println("同步------------------------------------------");
         Map<String,String> params = new HashMap<String,String>();
         Map<String,String[]> requestParams = request.getParameterMap();
         for (Iterator<String> iter = requestParams.keySet().iterator(); iter.hasNext();) {
@@ -222,8 +231,11 @@ public class PaymentController {
             valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");
             params.put(name, valueStr);
         }
-
-        boolean signVerified = AlipaySignature.rsaCheckV1(params, alipayConfig.getAlipayPublicKey(), alipayConfig.getCharset(),alipayConfig.getSignType()); //调用SDK验证签名
+        System.out.println(alipayConfig.getAlipayPublicKey());
+        System.out.println(alipayConfig.getCharset());
+        System.out.println(alipayConfig.getSignType());
+        boolean signVerified = AlipaySignature.rsaCheckV1(params, alipayConfig.getAlipayPublicKey(),
+                alipayConfig.getCharset(),alipayConfig.getSignType()); //调用SDK验证签名
 
         //——请在这里编写您的程序（以下代码仅作参考）——
         System.out.println("----------------------------"+signVerified);

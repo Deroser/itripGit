@@ -10,7 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.regex.Pattern;
-
+/**
+ * UserController
+ * 李文俊
+ * 2020.7.20
+ */
 @Controller
 @RequestMapping(value = "/api")
 public class UserController {

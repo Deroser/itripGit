@@ -1,5 +1,9 @@
 package com.kgc.beans.vo;
-
+/**
+ * ItripCommentScoreAvgVo
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripCommentScoreAvgVo {
     private double avgFacilitiesScore;
     private double avgHygieneScore;

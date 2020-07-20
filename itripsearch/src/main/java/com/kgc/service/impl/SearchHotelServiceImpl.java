@@ -13,6 +13,11 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+/**
+ * SearchHotelServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("searchHotelService")
 public class SearchHotelServiceImpl implements SearchHotelService {
     private static String URL = PropertiesUtils.get("db.properties","baseUrl");

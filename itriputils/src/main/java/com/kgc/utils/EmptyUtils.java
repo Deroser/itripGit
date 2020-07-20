@@ -5,10 +5,10 @@ import java.util.Map;
 
 /**
  * <p>判断是否是空的 工具类</p>
- * @author XX
- * @version v1.0
- * @since 2015/5/5
+ * 李文俊
+ * 2020.7.20
  */
+
 public class EmptyUtils {
     //判空
     public static boolean isEmpty(Object obj){

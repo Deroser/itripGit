@@ -5,7 +5,11 @@ import com.kgc.beans.model.ItripLabelDic;
 import com.kgc.beans.vo.ItripLabelDicVo;
 
 import java.util.List;
-
+/**
+ * ItripLabelDicService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripLabelDicService {
     /**
      * 获取酒店特色列表

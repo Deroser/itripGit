@@ -16,7 +16,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
-
+/**
+ * HotelRoomController
+ * 李文俊
+ * 2020.7.20
+ */
 @Controller
 @RequestMapping("/api/hotelroom")
 public class HotelRoomController {

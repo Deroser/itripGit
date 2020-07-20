@@ -1,5 +1,9 @@
 package com.kgc.service;
-
+/**
+ * SmsService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface SmsService {
     /**
      * 发送短信

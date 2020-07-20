@@ -2,7 +2,11 @@ package com.kgc.beans.vo;
 
 
 import java.util.Date;
-
+/**
+ * ItripSearchOrderVO
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripSearchOrderVO {
 
     private String orderNo;//3

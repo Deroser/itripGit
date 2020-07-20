@@ -15,7 +15,11 @@ import org.apache.solr.common.SolrDocumentList;
 
 import java.io.IOException;
 import java.util.List;
-
+/**
+ * BaseQuery
+ * 李文俊
+ * 2020.7.20
+ */
 public class BaseQuery<T> {
     private HttpSolrClient httpSolrClient;
     static Logger logger = Logger.getLogger(BaseQuery.class);

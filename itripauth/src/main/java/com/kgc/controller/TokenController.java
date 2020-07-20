@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Calendar;
-
+/**
+ * TokenController
+ * 李文俊
+ * 2020.7.20
+ */
 @Controller
 @RequestMapping(value = "/api")
 public class TokenController {

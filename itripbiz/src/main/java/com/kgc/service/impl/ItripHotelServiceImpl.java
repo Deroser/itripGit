@@ -13,7 +13,11 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripHotelServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("itripHotelService")
 public class ItripHotelServiceImpl implements ItripHotelService {
     @Resource

@@ -10,6 +10,11 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+/**
+ * SendMailText
+ * 李文俊
+ * 2020.7.20
+ */
 @Component
 public class SendMailText {
 	 //发件人地址

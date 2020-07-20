@@ -6,7 +6,11 @@ import com.kgc.beans.model.ItripHotelTempStore;
 import com.kgc.beans.vo.store.StoreVO;
 import com.kgc.utils.Page;
 
-
+/**
+ * ItripHotelTempStoreService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripHotelTempStoreService {
 
     public ItripHotelTempStore getById(Long id)throws Exception;

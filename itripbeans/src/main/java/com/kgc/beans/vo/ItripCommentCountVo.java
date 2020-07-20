@@ -1,5 +1,9 @@
 package com.kgc.beans.vo;
-
+/**
+ * ItripCommentCountVo
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripCommentCountVo {
     private Integer improve;
     private Integer isok;

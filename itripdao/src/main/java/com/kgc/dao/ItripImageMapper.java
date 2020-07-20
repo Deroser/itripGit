@@ -3,7 +3,11 @@ import com.kgc.beans.model.ItripImage;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripImageMapper
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripImageMapper {
 
 	public ItripImage getById(@Param(value = "id") Long id)throws Exception;

@@ -5,7 +5,11 @@ import java.util.Map;
 
 import com.kgc.utils.Page;
 
-
+/**
+ * ItripUserService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripUserService {
 
     public ItripUser getById(Long id)throws Exception;

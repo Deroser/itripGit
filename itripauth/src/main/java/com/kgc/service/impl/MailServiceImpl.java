@@ -12,7 +12,11 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Date;
 import java.util.Properties;
-
+/**
+ * MailServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("mailService")
 public class MailServiceImpl implements MailService {
     @Resource

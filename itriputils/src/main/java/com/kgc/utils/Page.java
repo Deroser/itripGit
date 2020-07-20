@@ -3,7 +3,9 @@ package com.kgc.utils;
 import java.util.List;
 
 /**
- * Created by sam on 2018/2/9.
+ * Page
+ * 李文俊
+ * 2020.7.20
  */
 public class Page<T> {
     /**

@@ -5,7 +5,11 @@ import java.util.Map;
 import com.kgc.beans.model.ItripTradeEnds;
 import com.kgc.utils.Page;
 
-
+/**
+ * ItripTradeEndsService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripTradeEndsService {
 
     public ItripTradeEnds getById(Long id)throws Exception;

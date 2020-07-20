@@ -20,7 +20,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-
+/**
+ * SystemCommentController
+ * 李文俊
+ * 2020.7.20
+ */
 @Controller
 @RequestMapping("/api/comment")
 public class SystemCommentController {

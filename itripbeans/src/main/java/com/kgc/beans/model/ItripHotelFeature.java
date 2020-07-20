@@ -3,8 +3,11 @@ package com.kgc.beans.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
 /**
  * ItripHotelFeature表
+ * 李文俊
+ * 2020.7.20
  */
 public class ItripHotelFeature implements Serializable {
 

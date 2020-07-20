@@ -1,7 +1,11 @@
 package com.kgc.service;
 
 import com.kgc.beans.model.ItripUser;
-
+/**
+ * TokenService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface TokenService {
     /**
      * 会话超时时间

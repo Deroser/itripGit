@@ -4,7 +4,11 @@ import org.apache.solr.client.solrj.beans.Field;
 
 import java.io.Serializable;
 import java.util.Date;
-
+/**
+ * ItripHotelVo
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripHotelVo implements Serializable {
     @Field
     private Long id;

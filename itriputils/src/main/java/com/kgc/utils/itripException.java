@@ -1,7 +1,8 @@
 package com.kgc.utils;
-
 /**
- * Created by l骆明 on 2018/7/14.
+ * itripException
+ * 李文俊
+ * 2020.7.20
  */
 public class itripException extends Exception{
     private String errorCode;

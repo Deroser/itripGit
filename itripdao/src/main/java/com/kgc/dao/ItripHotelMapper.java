@@ -4,7 +4,11 @@ import com.kgc.beans.vo.BizHotelDeteilsVo;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripHotelMapper
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripHotelMapper {
 
 	public ItripHotel getById(@Param(value = "id") Long id)throws Exception;

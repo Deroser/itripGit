@@ -1,7 +1,11 @@
 package com.kgc.beans.model;
 
 import java.util.Date;
-
+/**
+ * ItripCommentData
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripCommentData {
     private Date checkInDate;
     private String content;

@@ -14,7 +14,11 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripCommentServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("itripCommentService")
 public class ItripCommentServiceImpl implements ItripCommentService {
 

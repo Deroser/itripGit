@@ -7,7 +7,11 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * ItripUserLinkUserService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripUserLinkUserService {
 
     public ItripUserLinkUser getById(Long id)throws Exception;

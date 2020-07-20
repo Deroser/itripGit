@@ -84,10 +84,10 @@
     </bean>
     <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
         <constructor-arg ref="jedisPoolConfig"/>
-        <constructor-arg value="192.168.11.130"/>
+        <constructor-arg value="192.168.11.180"/>
         <constructor-arg value="6379"/>
         <constructor-arg value="3000"/>
-        <constructor-arg value="717171"/>
+        <constructor-arg value="123456"/>
     </bean>
     <bean name="systemConfig" class="com.kgc.utils.SystemConfig">
         <property name="machineCode" value="${sysConfig.machineCode}"/>

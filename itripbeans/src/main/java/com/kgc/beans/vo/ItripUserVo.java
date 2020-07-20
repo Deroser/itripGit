@@ -1,5 +1,9 @@
 package com.kgc.beans.vo;
-
+/**
+ * ItripUserVo
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripUserVo {
 
     /**

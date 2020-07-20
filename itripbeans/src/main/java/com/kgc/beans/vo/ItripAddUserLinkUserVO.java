@@ -2,6 +2,12 @@ package com.kgc.beans.vo;
 
 
 import org.codehaus.jackson.annotate.JsonProperty;
+
+/**
+ * ItripAddUserLinkUserVO
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripAddUserLinkUserVO {
 
     private String linkIdCard;

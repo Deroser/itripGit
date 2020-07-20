@@ -8,7 +8,11 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * ItripImageServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("itripImageService")
 public class ItripImageServiceImpl implements ItripImageService {
     @Resource

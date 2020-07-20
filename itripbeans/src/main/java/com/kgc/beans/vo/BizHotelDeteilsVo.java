@@ -4,7 +4,11 @@ import com.kgc.beans.model.ItripBizHotelDeteil;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * BizHotelDeteilsVo
+ * 李文俊
+ * 2020.7.20
+ */
 public class BizHotelDeteilsVo {
     private String description;
     private String name = "酒店介绍";

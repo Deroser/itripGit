@@ -7,9 +7,10 @@ import java.io.IOException;
 
 /**
  * 本类实现了UASparser的单例，该实例可通过分析user-agent信息判断当前Http请求的客户端浏览器类型
- * @author hduser
- *
+ * 李文俊
+ * 2020.7.20
  */
+
 public class UserAgentUtil {
 
     private static UASparser uasParser = null;

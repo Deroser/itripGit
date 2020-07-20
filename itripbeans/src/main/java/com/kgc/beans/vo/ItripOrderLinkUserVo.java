@@ -2,8 +2,10 @@ package com.kgc.beans.vo;
 
 /**
  * 根据订单查询联系人返回VO
- * Created by zezhong.shang on 17-6-8.
+ * 李文俊
+ * 2020.7.20
  */
+
 public class ItripOrderLinkUserVo {
 
     private Long linkUserId;

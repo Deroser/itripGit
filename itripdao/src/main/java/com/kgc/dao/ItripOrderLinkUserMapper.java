@@ -3,7 +3,11 @@ import com.kgc.beans.model.ItripOrderLinkUser;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripOrderLinkUserMapper
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripOrderLinkUserMapper {
 
 	public ItripOrderLinkUser getById(@Param(value = "id") Long id)throws Exception;

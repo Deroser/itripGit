@@ -2,7 +2,11 @@ package com.kgc.beans.vo;
 
 
 import java.util.List;
-
+/**
+ * ItripDataVo
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripDataVo<T> {
     private Integer beginPos;
     private Integer curPage;

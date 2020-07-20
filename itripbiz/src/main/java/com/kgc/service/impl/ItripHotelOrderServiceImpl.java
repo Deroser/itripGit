@@ -19,7 +19,11 @@ import java.math.BigDecimal;
 import java.util.*;
 
 import static java.math.BigDecimal.ROUND_DOWN;
-
+/**
+ * ItripHotelOrderServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("itripHotelOrderService")
 public class ItripHotelOrderServiceImpl implements ItripHotelOrderService {
 

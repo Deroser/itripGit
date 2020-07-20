@@ -5,7 +5,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Random;
-
+/**
+ * DigestUtil
+ * 李文俊
+ * 2020.7.20
+ */
 public class DigestUtil {
 
 	private static String encodingCharset = "UTF-8";

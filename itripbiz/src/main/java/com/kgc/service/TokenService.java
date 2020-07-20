@@ -1,6 +1,10 @@
 package com.kgc.service;
 
-
+/**
+ * TokenService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface TokenService {
     /**
      * 会话超时时间

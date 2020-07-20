@@ -3,7 +3,11 @@ import com.kgc.beans.model.ItripProductStore;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripProductStoreMapper
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripProductStoreMapper {
 
 	public ItripProductStore getById(@Param(value = "id") Long id)throws Exception;

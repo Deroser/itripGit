@@ -3,8 +3,11 @@ package com.kgc.beans.vo;
 import java.io.Serializable;
 import java.util.Date;
 
+
 /**
  * ItripLabelDic表
+ * 李文俊
+ * 2020.7.20
  */
 public class ItripLabelDicVo implements Serializable {
 

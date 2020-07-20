@@ -10,7 +10,11 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Set;
 
-
+/**
+ * SmsServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("smsService")
 public class SmsServiceImpl implements SmsService {
     private Logger logger = Logger.getLogger(SmsServiceImpl.class);

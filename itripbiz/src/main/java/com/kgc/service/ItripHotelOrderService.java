@@ -12,7 +12,11 @@ import com.kgc.beans.vo.ItripPersonalOrderVo;
 import com.kgc.beans.vo.ItripSearchOrderVO;
 import com.kgc.utils.Page;
 
-
+/**
+ * ItripHotelOrderService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripHotelOrderService {
 
     public ItripHotelOrder getById(Long id)throws Exception;

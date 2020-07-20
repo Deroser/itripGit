@@ -18,7 +18,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * UserInfoController
+ * 李文俊
+ * 2020.7.20
+ */
 @Controller
 @RequestMapping("/api/userinfo")
 public class UserInfoController {

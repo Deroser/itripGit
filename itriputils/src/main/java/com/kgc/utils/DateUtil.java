@@ -12,10 +12,10 @@ import java.util.List;
 
 /**
  * 处理日期类型变量的工具类
- * @author donghai
- * @version v1.0
- * @since 2017/04/20
+ * @author 李文俊
+ * @since 2020.7.20
  */
+
 @Component
 public class DateUtil {
     /**

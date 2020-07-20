@@ -9,7 +9,11 @@ import com.kgc.utils.Page;
 import io.swagger.models.auth.In;
 
 import java.util.List;
-
+/**
+ * SearchHotelService
+ * 李文俊
+ * 2020.7.20
+ */
 public interface SearchHotelService {
     /**
      * 根据热门城市查询酒店

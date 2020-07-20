@@ -13,7 +13,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripHotelRoomServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("itripHotelRoomService")
 public class ItripHotelRoomServiceImpl implements ItripHotelRoomService {
 

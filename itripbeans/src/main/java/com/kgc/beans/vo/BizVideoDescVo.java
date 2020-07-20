@@ -1,7 +1,11 @@
 package com.kgc.beans.vo;
 
 import java.util.List;
-
+/**
+ * BizVideoDescVo
+ * 李文俊
+ * 2020.7.20
+ */
 //酒店特色、商圈、酒店名称
 public class BizVideoDescVo {
     private List<String > hotelFeatureList;

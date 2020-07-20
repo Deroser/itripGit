@@ -24,7 +24,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * HotelOrderController
+ * 李文俊
+ * 2020.7.20
+ */
 @Controller
 @RequestMapping("/api/hotelorder")
 public class HotelOrderController {

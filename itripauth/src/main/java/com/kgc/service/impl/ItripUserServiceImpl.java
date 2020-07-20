@@ -15,7 +15,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripUserServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("itripUserService")
 public class ItripUserServiceImpl implements ItripUserService {
     @Resource

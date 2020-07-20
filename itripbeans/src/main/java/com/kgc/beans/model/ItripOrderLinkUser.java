@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 /**
  * ItripOrderLinkUser表
+ * 李文俊
+ * 2020.7.20
  */
 public class ItripOrderLinkUser implements Serializable {
 

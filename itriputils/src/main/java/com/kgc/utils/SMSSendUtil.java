@@ -8,7 +8,11 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.spi.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-
+/**
+ * SMSSendUtil
+ * 李文俊
+ * 2020.7.20
+ */
 @Component
 public class SMSSendUtil {
     public boolean sendSms(String phonenum, String b, String str[]) {

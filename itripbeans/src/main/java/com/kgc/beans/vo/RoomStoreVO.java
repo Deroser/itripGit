@@ -5,8 +5,10 @@ import java.util.Date;
 
 /**
  * 房间的库存VO
- * Created by XX on 17-5-16.
+ * 李文俊
+ * 2020.7.20
  */
+
 public class RoomStoreVO implements Serializable{
 
     private Long hotelId;

@@ -6,7 +6,11 @@ import com.kgc.service.ItripVideoDescService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-
+/**
+ * ItripVideoDescServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("itripVideoDescService")
 public class ItripVideoDescServiceImpl implements ItripVideoDescService {
     @Resource

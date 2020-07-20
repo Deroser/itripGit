@@ -1,6 +1,11 @@
 package com.kgc.dao;
 
 import java.io.Serializable;
+/**
+ * Param
+ * 李文俊
+ * 2020.7.20
+ */
 //单个
 public class Param implements Serializable {
     private String key;

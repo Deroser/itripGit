@@ -12,7 +12,11 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripLabelDicServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("itripLabelDicService")
 public class ItripLabelDicServiceImpl implements ItripLabelDicService {
     @Resource

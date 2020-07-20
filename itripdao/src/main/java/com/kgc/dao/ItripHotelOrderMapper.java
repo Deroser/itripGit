@@ -4,7 +4,11 @@ import com.kgc.beans.vo.*;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripHotelOrderMapper
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripHotelOrderMapper {
 
 	public ItripHotelOrder getById(@Param(value = "id") Long id)throws Exception;

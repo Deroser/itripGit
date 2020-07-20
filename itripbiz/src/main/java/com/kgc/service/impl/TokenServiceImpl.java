@@ -12,7 +12,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
+/**
+ * TokenServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("biztokenService")
 public class TokenServiceImpl implements TokenService {
     private Logger logger = Logger.getLogger(TokenServiceImpl.class);

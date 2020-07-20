@@ -18,6 +18,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Calendar;
+/**
+ * LoginController
+ * 李文俊
+ * 2020.7.20
+ */
 
 /**
  * 用户登录控制器

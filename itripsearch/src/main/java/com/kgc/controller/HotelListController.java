@@ -18,7 +18,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
-
+/**
+ * HotelListController
+ * 李文俊
+ * 2020.7.20
+ */
 @Controller
 @RequestMapping("/api/hotellist")
 public class HotelListController {

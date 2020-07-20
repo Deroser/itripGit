@@ -1,5 +1,9 @@
 package com.kgc.config;
-
+/**
+ * AlipayConfig
+ * 李文俊
+ * 2020.7.20
+ */
 public class AlipayConfig {
 	// 商户appid
 	private  String appId ;

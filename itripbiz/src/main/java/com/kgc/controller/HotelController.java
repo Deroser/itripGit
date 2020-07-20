@@ -22,7 +22,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * HotelController
+ * 李文俊
+ * 2020.7.20
+ */
 @Controller
 @RequestMapping("/api/hotel")
 public class HotelController {

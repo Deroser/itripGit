@@ -4,7 +4,11 @@ import com.kgc.beans.vo.store.StoreVO;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripHotelTempStoreMapper
+ * 李文俊
+ * 2020.7.20
+ */
 public interface ItripHotelTempStoreMapper {
 
 	public ItripHotelTempStore getById(@Param(value = "id") Long id)throws Exception;

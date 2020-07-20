@@ -1,5 +1,9 @@
 package com.kgc.beans.vo;
-
+/**
+ * ItripCommentHotelDescVo
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripCommentHotelDescVo {
 
     private Long hotelId;

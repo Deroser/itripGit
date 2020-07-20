@@ -3,6 +3,11 @@ package com.kgc.dao;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * SolrParam
+ * 李文俊
+ * 2020.7.20
+ */
 //多个
 public class SolrParam implements Serializable {
     private List<Param> paramList = new ArrayList<>();

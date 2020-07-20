@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 /**
  * ItripHotelExtendProperty表
+ * 李文俊
+ * 2020.7.20
  */
 public class ItripHotelExtendProperty implements Serializable {
 

@@ -5,8 +5,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+
 /**
  * ItripHotelOrder表
+ * 李文俊
+ * 2020.7.20
  */
 public class ItripHotelOrderVo implements Serializable {
 

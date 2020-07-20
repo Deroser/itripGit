@@ -1,5 +1,9 @@
 package com.kgc.beans.vo;
-
+/**
+ * ItripTokenVo
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripTokenVo {
     //过期时间
     private Long expTime;

@@ -1,7 +1,11 @@
 package com.kgc.beans.vo;
 
 import com.kgc.beans.model.ItripImage;
-
+/**
+ * ItripAddCommentVO
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripAddCommentVO {
 
     private Long hotelId;

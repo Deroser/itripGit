@@ -1,5 +1,9 @@
 package com.kgc.beans.model;
-
+/**
+ * ItripBizHotelDeteil
+ * 李文俊
+ * 2020.7.20
+ */
 public class ItripBizHotelDeteil {
     private String description;
     private String name;

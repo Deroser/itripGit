@@ -10,7 +10,11 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * ItripTradeEndsServiceImpl
+ * 李文俊
+ * 2020.7.20
+ */
 @Service("itripTradeEndsService")
 public class ItripTradeEndsServiceImpl implements ItripTradeEndsService {
 
